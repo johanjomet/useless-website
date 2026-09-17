@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>useless website — the most useless website on the internet</title>
+<meta name="description" content="The internet's leading source of absolutely nothing. 0 pages. 0 results. 100% useless.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕳️</text></svg>">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --acid:#c9ff3d;
+    --void:#0a0a0b;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--void);
+    color:#ededed;
+    font-family:'Inter',system-ui,sans-serif;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .glow{text-shadow:0 0 24px rgba(201,255,61,.45)}
+  .grain:before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.045;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.09);backdrop-filter:blur(6px)}
+  .btn{border:1px solid rgba(255,255,255,.16);transition:transform .12s ease,background .2s ease,border-color .2s ease}
+  .btn:hover{background:rgba(255,255,255,.07);transform:translateY(-2px)}
+  .btn-acid{background:var(--acid);color:#0a0a0b;border-color:var(--acid);font-weight:700}
+  .btn-acid:hover{background:#d8ff66}
+  .stripes{
+    background-image:repeating-linear-gradient(45deg,rgba(201,255,61,.14) 0 10px,transparent 10px 20px);
+  }
+  @keyframes spin-slow{to{transform:rotate(360deg)}}
+  .spin-slow{animation:spin-slow 2.4s linear infinite}
+  @keyframes floatup{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-60px) scale(1.25)}}
+  .floatup{animation:floatup 1.1s ease-out forwards}
+  @keyframes toastin{from{opacity:0;transform:translateX(40px) scale(.96)}to{opacity:1;transform:none}}
+  .toastin{animation:toastin .28s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .marquee{display:flex;width:max-content;animation:marquee 26s linear infinite}
+  @keyframes pulsebar{0%,100%{opacity:1}50%{opacity:.45}}
+  .pulsebar{animation:pulsebar 1.4s ease-in-out infinite}
+  @keyframes shake{10%,90%{transform:translateX(-2px)}30%,70%{transform:translateX(3px)}50%{transform:translateX(-4px)}}
+  .shake{animation:shake .5s}
+  details summary{cursor:pointer;list-style:none}
+  details summary::-webkit-details-marker{display:none}
+  details[open] .chev{transform:rotate(45deg)}
+  .chev{transition:transform .2s ease}
+  input,textarea,select{outline:none}
+  input:focus,textarea:focus{border-color:var(--acid)}
+  ::selection{background:var(--acid);color:#0a0a0b}
+  .square{aspect-ratio:1;background:linear-gradient(135deg,#232326,#18181a);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.6rem;letter-spacing:.08em;color:#6b6b72;cursor:pointer;transition:.15s}
+  .square:hover{border-color:rgba(201,255,61,.5)}
+  .square.sel{border-color:var(--acid);background:rgba(201,255,61,.16);color:var(--acid)}
+  .switch{width:44px;height:24px;border-radius:999px;background:rgba(255,255,255,.14);position:relative;cursor:pointer;transition:.2s;flex:none}
+  .switch i{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:999px;background:#fff;transition:.2s}
+  .switch.on{background:var(--acid)}
+  .switch.on i{left:23px;background:#0a0a0b}
+  .dodge-stage{position:relative;overflow:hidden}
+  #dodgeBtn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);transition:left .16s cubic-bezier(.2,.9,.3,1.4),top .16s cubic-bezier(.2,.9,.3,1.4),transform .16s}
+  .blink{animation:blink 1s steps(2,start) infinite}
+  @keyframes blink{to{visibility:hidden}}
+  .rainbow{background:linear-gradient(90deg,#ff5f5f,#ffd93d,#c9ff3d,#5fd0ff,#c98bff,#ff5f5f);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:slide 6s linear infinite}
+  @keyframes slide{to{background-position:300% 0}}
+  a.noop{text-decoration:underline;text-decoration-style:wavy;text-decoration-color:rgba(201,255,61,.6);text-underline-offset:4px}
+</style>
+</head>
+<body class="grain">
+
+<!-- ================= TOP BAR ================= -->
+<header class="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0b]/80 backdrop-blur-md">
+  <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-between gap-4">
+    <a href="#" id="logoLink" class="flex items-center gap-2 font-extrabold tracking-tight">
+      <span class="w-6 h-6 rounded-md bg-[#c9ff3d] grid place-items-center text-[#0a0a0b] text-xs">∅</span>
+      useless<span class="text-[#c9ff3d]">.website</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-white/60">
+      <a href="#hero" class="noop">Home</a>
+      <a href="#about" class="noop">About Nothing</a>
+      <a href="#faq" class="noop">FAQ</a>
+      <button id="darkBtn" class="btn px-3 py-1.5 rounded-full text-xs text-white/70">Dark mode <span class="mono text-[#c9ff3d]">off</span></button>
+    </nav>
+    <button id="shareTop" class="btn btn-acid px-4 py-1.5 rounded-full text-xs">Share the nothing</button>
+  </div>
+  <div class="overflow-hidden border-t border-white/5 bg-[#c9ff3d] text-[#0a0a0b] text-[11px] font-bold mono">
+    <div class="marquee py-1">
+      <span class="px-4">★ BREAKING: WE HAVE ANNOUNCED NOTHING ★</span><span class="px-4">0 NEW PAGES PUBLISHED TODAY</span><span class="px-4">★ 100% OF OUR USERS LEARNED NOTHING ★</span><span class="px-4">NOW HIRING: NOBODY, FOR NOTHING</span>
+      <span class="px-4">★ BREAKING: WE HAVE ANNOUNCED NOTHING ★</span><span class="px-4">0 NEW PAGES PUBLISHED TODAY</span><span class="px-4">★ 100% OF OUR USERS LEARNED NOTHING ★</span><span class="px-4">NOW HIRING: NOBODY, FOR NOTHING</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="relative max-w-6xl mx-auto px-5 pt-16 pb-14 md:pt-24">
+  <div class="inline-flex items-center gap-2 text-[11px] mono uppercase tracking-widest text-[#c9ff3d] border border-[#c9ff3d]/30 bg-[#c9ff3d]/5 px-3 py-1 rounded-full mb-6">
+    <span class="w-1.5 h-1.5 rounded-full bg-[#c9ff3d] pulsebar"></span> 0 pages · 0 results · 0 use
+  </div>
+  <h1 class="text-[13vw] leading-[.92] md:text-8xl font-black tracking-tighter">
+    The most useless<br><span class="rainbow">website</span> on the internet<span class="text-[#c9ff3d]">.</span>
+  </h1>
+  <p class="mt-6 text-lg md:text-2xl text-white/70 max-w-2xl leading-snug">
+    Everything here works perfectly. That's the problem. Nothing on this page will help you, teach you, entertain you for more than 4 seconds, or make you money.
+  </p>
+  <p class="mt-3 text-white/40 mono text-sm">Estimated value provided: 0.000¢</p>
+
+  <div class="mt-9 flex flex-wrap gap-3">
+    <button id="ctaMain" class="btn btn-acid px-6 py-3 rounded-xl text-base">Do something useful →</button>
+    <button id="nothingModeBtn" class="btn px-6 py-3 rounded-xl text-base">Enter Do-Nothing Mode</button>
+    <button id="uselessHint" class="btn px-6 py-3 rounded-xl text-base">What does this button do?</button>
+  </div>
+
+  <div class="mt-12 grid sm:grid-cols-3 gap-4">
+    <div class="card rounded-2xl p-5">
+      <div class="mono text-xs text-white/45">USELESS CLICKS (you)</div>
+      <div id="statClicks" class="text-3xl font-black mt-1">0</div>
+    </div>
+    <div class="card rounded-2xl p-5">
+      <div class="mono text-xs text-white/45">TIME WASTED HERE</div>
+      <div id="statTime" class="text-3xl font-black mt-1 mono">00:00:00</div>
+    </div>
+    <div class="card rounded-2xl p-5">
+      <div class="mono text-xs text-white/45">NEXT USEFUL UPDATE IN</div>
+      <div id="statEta" class="text-3xl font-black mt-1 text-white/40">NEVER</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOADING (eternally 99%) ================= -->
+<section id="about" class="max-w-6xl mx-auto px-5 py-10">
+  <div class="card rounded-3xl p-7 md:p-10">
+    <div class="flex items-start justify-between gap-6 flex-wrap">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-black tracking-tight">Loading useful content…</h2>
+        <p class="text-white/50 mt-1 max-w-xl">We have been at 99% since our launch in 2016. Engineering assures us it will complete shortly.</p>
+      </div>
+      <span id="pctLabel" class="mono text-5xl md:text-6xl font-black text-[#c9ff3d] glow">99%</span>
+    </div>
+    <div class="mt-6 h-4 w-full rounded-full bg-white/8 overflow-hidden border border-white/10">
+      <div id="bar" class="h-full bg-gradient-to-r from-[#8fd11f] to-[#c9ff3d] stripes" style="width:99%;transition:width .9s linear"></div>
+    </div>
+    <div class="mt-4 flex flex-wrap gap-3 items-center">
+      <button id="speedBtn" class="btn px-4 py-2 rounded-lg text-sm">Speed it up</button>
+      <span id="speedMsg" class="text-sm text-white/45 mono">status: apparently 0.0002% per decade</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE BUTTON ================= -->
+<section class="max-w-6xl mx-auto px-5 py-10">
+  <div class="card rounded-3xl overflow-hidden">
+    <div class="p-7 md:p-10 pb-4">
+      <h2 class="text-3xl md:text-4xl font-black tracking-tight">The Big Red Button</h2>
+      <p class="text-white/55 mt-2 max-w-2xl">Summoning unimaginable consequences since 2019. Please hover it to discover how little will happen.</p>
+      <p class="mono text-xs text-white/40 mt-3" id="dodgeLog">dodges: 0 · presses: 0 · consequences: 0</p>
+    </div>
+    <div id="dodgeStage" class="dodge-stage h-[340px] md:h-[400px] border-y border-white/10 stripes">
+      <div class="absolute left-1/2 top-6 -translate-x-1/2 mono text-[11px] text-[#c9ff3d]/70 text-center w-full px-4" id="dodgeTip">tip: it doesn't want to be pressed</div>
+      <button id="dodgeBtn" class="px-7 py-4 rounded-2xl font-black tracking-tight text-lg shadow-2xl"
+        style="background:linear-gradient(180deg,#ff5f5f,#d31f1f);color:#fff;box-shadow:0 18px 50px -12px rgba(255,60,60,.6)">
+        DO NOT PRESS
+      </button>
+    </div>
+    <div class="p-7 md:p-10 pt-6">
+      <div id="pressResult" class="mono text-sm text-white/70 min-h-[3.5rem] border-l-2 border-[#c9ff3d]/50 pl-4">awaiting your first terrible decision…</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEARCH ================= -->
+<section class="max-w-6xl mx-auto px-5 py-10 grid lg:grid-cols-[1.2fr_1fr] gap-6">
+  <div class="card rounded-3xl p-7 md:p-9">
+    <h2 class="text-2xl md:text-3xl font-black tracking-tight">Search our entire knowledge base</h2>
+    <p class="text-white/50 mt-1">1,000,000,000 results indexed. All of them empty.</p>
+    <form id="searchForm" class="mt-5 flex gap-2">
+      <input id="searchInput" placeholder="Try 'how to be useful'…" class="flex-1 bg-black/40 border border-white/12 rounded-xl px-4 py-3 text-sm mono" autocomplete="off">
+      <button class="btn btn-acid px-5 rounded-xl text-sm">Search</button>
+    </form>
+    <div id="searchOut" class="mt-5 space-y-3"></div>
+  </div>
+
+  <div class="card rounded-3xl p-7 md:p-9">
+    <h2 class="text-2xl md:text-3xl font-black tracking-tight">Uselessness settings</h2>
+    <p class="text-white/50 mt-1">Every setting is locked to "maximum useless".</p>
+    <div class="mt-5 space-y-4 text-sm">
+      <div class="flex items-center justify-between gap-4"><span>Enable usefulness <span class="text-white/35 mono text-xs">beta</span></span><div class="switch" data-set="useful"><i></i></div></div>
+      <div class="flex items-center justify-between gap-4"><span>Save my data <span class="text-white/35 mono text-xs">we have none</span></span><div class="switch" data-set="data"><i></i></div></div>
+      <div class="flex items-center justify-between gap-4"><span>Reduce pointless animations</span><div class="switch" data-set="anim"><i></i></div></div>
+      <div class="flex items-center justify-between gap-4"><span>Notify me about nothing</span><div class="switch" data-set="noti"><i></i></div></div>
+    </div>
+    <button id="resetBtn" class="btn mt-6 px-4 py-2 rounded-lg text-xs">Reset everything (it will change nothing)</button>
+  </div>
+</section>
+
+<!-- ================= CAPTCHA ================= -->
+<section class="max-w-6xl mx-auto px-5 py-10">
+  <div class="card rounded-3xl p-7 md:p-10 grid md:grid-cols-[1fr_1.1fr] gap-8 items-center">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-black tracking-tight">Security check</h2>
+      <p class="text-white/55 mt-2">Select all squares containing a useful website. There are none. This is intentional and, frankly, on brand.</p>
+      <button id="captchaBtn" class="btn btn-acid mt-5 px-5 py-2.5 rounded-lg text-sm">Verify</button>
+      <div id="captchaOut" class="mt-4 mono text-xs text-white/60 min-h-[2.5rem]"></div>
+    </div>
+    <div class="grid grid-cols-3 gap-2 md:gap-3" id="captchaGrid"></div>
+  </div>
+</section>
+
+<!-- ================= A/B TEST ================= -->
+<section class="max-w-6xl mx-auto px-5 py-10">
+  <div class="card rounded-3xl p-7 md:p-10 text-center">
+    <div class="mono text-xs text-white/40 uppercase tracking-widest">live experiment · participants: 1</div>
+    <h2 class="text-2xl md:text-3xl font-black tracking-tight mt-2">Which button is more useless?</h2>
+    <div class="mt-7 flex flex-wrap gap-4 justify-center">
+      <button class="abBtn btn px-8 py-5 rounded-2xl text-lg w-56" data-ab="A">
+        <div class="font-black">Option A</div><div class="text-xs text-white/40 mono mt-1">the useful one</div>
+      </button>
+      <button class="abBtn btn px-8 py-5 rounded-2xl text-lg w-56" data-ab="B">
+        <div class="font-black">Option B</div><div class="text-xs text-white/40 mono mt-1">the other useful one</div>
+      </button>
+    </div>
+    <div id="abOut" class="mt-6 mono text-sm text-white/60">results pending forever…</div>
+  </div>
+</section>
+
+<!-- ================= ASK UselessGPT ================= -->
+<section class="max-w-6xl mx-auto px-5 py-10 grid lg:grid-cols-[1.15fr_1fr] gap-6">
+  <div class="card rounded-3xl flex flex-col overflow-hidden">
+    <div class="px-7 pt-7 pb-4 border-b border-white/10">
+      <h2 class="text-2xl font-black tracking-tight">Ask UselessGPT <span class="text-[11px] mono text-[#c9ff3d] align-middle border border-[#c9ff3d]/30 px-2 py-0.5 rounded-full">AGI-ish</span></h2>
+      <p class="text-white/50 text-sm mt-1">Trained on 40 trillion tokens of absolutely nothing.</p>
+    </div>
+    <div id="chatLog" class="flex-1 p-5 space-y-3 text-sm overflow-y-auto max-h-[320px] bg-black/20">
+      <div class="flex gap-3"><div class="w-7 h-7 rounded-lg bg-[#c9ff3d] text-[#0a0a0b] grid place-items-center text-xs font-black flex-none">U</div><div class="text-white/75">Hello. I know nothing. Ask me anything and I will confirm that.</div></div>
+    </div>
+    <form id="chatForm" class="p-4 border-t border-white/10 flex gap-2">
+      <input id="chatInput" placeholder="Why am I here?" class="flex-1 bg-black/40 border border-white/12 rounded-xl px-4 py-3 text-sm mono" autocomplete="off">
+      <button class="btn btn-acid px-5 rounded-xl text-sm">Send</button>
+    </form>
+  </div>
+
+  <!-- newsletter -->
+  <div class="card rounded-3xl p-7 md:p-9 flex flex-col justify-between">
+    <div>
+      <h2 class="text-2xl font-black tracking-tight">Join 4,000,000 readers of nothing</h2>
+      <p class="text-white/55 mt-2">One email per week (never sent). Cancel anytime (nothing to cancel). Deeply useless.</p>
+      <form id="newsForm" class="mt-5 space-y-3">
+        <input id="newsEmail" placeholder="you@nowhere.com" class="w-full bg-black/40 border border-white/12 rounded-xl px-4 py-3 text-sm mono" autocomplete="off">
+        <button class="btn btn-acid w-full py-3 rounded-xl text-sm">Subscribe to nothing</button>
+      </form>
+      <div id="newsOut" class="mt-4 mono text-xs text-white/60 min-h-[3rem]"></div>
+    </div>
+    <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs mono text-white/40">
+      <span id="worldClicks">clicks wasted worldwide: 8,412,993,004</span>
+      <span class="blink text-[#c9ff3d]">● REC</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq" class="max-w-4xl mx-auto px-5 py-12">
+  <h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-2">Frequently asked nothing</h2>
+  <p class="text-white/50 mb-7">Answers written by our team of zero experts.</p>
+  <div class="space-y-3" id="faqWrap"></div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="mt-10 border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-5 py-12 grid md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <div class="flex items-center gap-2 font-extrabold">
+        <span class="w-5 h-5 rounded bg-[#c9ff3d] text-[#0a0a0b] grid place-items-center text-[10px]">∅</span> useless<span class="text-[#c9ff3d]">.website</span>
+      </div>
+      <p class="text-white/45 mt-3 max-w-xs">Founded in 2016 to fill a gap that did not exist. We are the #1 result for "nothing useful".</p>
+      <div class="mt-4 flex gap-3 text-white/50">
+        <a href="#" class="noop" onclick="return false">Privacy (we collect nothing)</a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-white/50">
+      <a href="#hero" class="noop">Home</a><a href="#faq" class="noop">FAQ</a>
+      <a href="#" class="noop" data-deadlink>Careers (0 openings)</a><a href="#" class="noop" data-deadlink>Blog (0 posts)</a>
+      <a href="#" class="noop" data-deadlink>Investors</a><a href="#" class="noop" data-deadlink>Press kit (empty)</a>
+      <a href="#" class="noop" data-deadlink>Contact nobody</a><a href="#" class="noop" data-deadlink>Terms of nothing</a>
+    </div>
+    <div>
+      <button id="shareBottom" class="btn btn-acid w-full py-3 rounded-xl text-sm">Share this useless site</button>
+      <button id="achievementsBtn" class="btn w-full py-3 rounded-xl text-sm mt-3">View my useless achievements</button>
+      <p class="mono text-[11px] text-white/35 mt-4">© <span id="year"></span> Useless Inc. All rights reversed. Current uselessness: <span id="footPct" class="text-[#c9ff3d]">0.0%</span></p>
+      <p class="mono text-[11px] text-white/30 mt-1">Hint: some secrets are extremely useless.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= HUD ================= -->
+<div class="fixed bottom-4 left-4 z-40 hidden sm:flex items-center gap-3 card rounded-2xl px-4 py-3">
+  <svg width="46" height="46" viewBox="0 0 36 36" class="-rotate-90">
+    <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="3"></circle>
+    <circle id="hudRing" cx="18" cy="18" r="15.9" fill="none" stroke="#c9ff3d" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100" stroke-linecap="round"></circle>
+  </svg>
+  <div>
+    <div class="mono text-[10px] text-white/40 uppercase tracking-widest">uselessness</div>
+    <div id="hudText" class="font-black text-sm">0.0%</div>
+    <div class="mono text-[10px] text-white/35">max achievable: 99.9%</div>
+  </div>
+</div>
+
+<div id="toasts" class="fixed top-20 right-4 z-50 w-[300px] space-y-2 pointer-events-none"></div>
+
+<!-- do-nothing overlay -->
+<div id="dnOverlay" class="fixed inset-0 z-[60] hidden bg-black/95 backdrop-blur-sm items-center justify-center text-center px-6">
+  <div>
+    <div class="mono text-xs text-[#c9ff3d] uppercase tracking-[.3em]">do-nothing mode</div>
+    <div id="dnTimer" class="mono text-6xl md:text-8xl font-black mt-4">00:00</div>
+    <div id="dnMsg" class="text-white/55 mt-4 max-w-md mx-auto">You are now officially doing nothing. This is the site's core feature. Do not adjust your browser.</div>
+    <button id="dnExit" class="btn btn-acid mt-8 px-6 py-3 rounded-xl text-sm">I can't take it anymore</button>
+  </div>
+</div>
+
+<!-- cookie banner -->
+<div id="cookie" class="fixed bottom-4 right-4 z-50 w-[330px] card rounded-2xl p-5 translate-y-[150%] transition-transform duration-500">
+  <div class="font-black">We use cookies 🍪</div>
+  <p class="text-xs text-white/55 mt-1">…to do absolutely nothing. We store zero data because we have zero features. Please consent to nothing anyway.</p>
+  <div class="flex gap-2 mt-4">
+    <button id="ckAccept" class="btn btn-acid flex-1 py-2 rounded-lg text-xs">Accept all nothing</button>
+    <button id="ckManage" class="btn px-3 py-2 rounded-lg text-xs">Manage</button>
+  </div>
+  <button id="ckReject" class="text-[11px] text-white/35 underline mt-3">Reject (rejected; banner will return)</button>
+</div>
+
+<!-- prefs modal -->
+<div id="prefsModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/70 p-4">
+  <div class="card rounded-2xl max-w-md w-full p-6">
+    <div class="flex items-start justify-between">
+      <h3 class="font-black text-lg">Cookie preferences</h3>
+      <button id="prefsClose" class="text-white/50">✕</button>
+    </div>
+    <p class="text-xs text-white/50 mt-1">All categories are permanently, proudly useless.</p>
+    <div class="mt-4 space-y-4 text-sm">
+      <div class="flex items-center justify-between gap-4"><span>Strictly useless</span><div class="switch on" data-cookie="1"><i></i></div></div>
+      <div class="flex items-center justify-between gap-4"><span>Analytics <span class="text-white/35 mono text-xs">(we have none)</span></span><div class="switch on" data-cookie="1"><i></i></div></div>
+      <div class="flex items-center justify-between gap-4"><span>Marketing <span class="text-white/35 mono text-xs">(of what?)</span></span><div class="switch on" data-cookie="1"><i></i></div></div>
+    </div>
+    <button id="prefsSave" class="btn btn-acid w-full mt-5 py-2.5 rounded-lg text-sm">Save preferences (nothing changes)</button>
+  </div>
+</div>
+
+<!-- achievements modal -->
+<div id="achModal" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/70 p-4">
+  <div class="card rounded-2xl max-w-lg w-full p-6 max-h-[80vh] overflow-y-auto">
+    <div class="flex items-start justify-between">
+      <h3 class="font-black text-lg">Useless achievements</h3>
+      <button id="achClose" class="text-white/50">✕</button>
+    </div>
+    <p class="text-xs text-white/50 mt-1">Proof that you accomplished nothing, documented beautifully.</p>
+    <div id="achList" class="mt-4 grid gap-2"></div>
+    <button id="achClear" class="btn w-full mt-5 py-2.5 rounded-lg text-xs">Erase all my pointless progress</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   useless.website — an engine for producing nothing
+   ============================================================ */
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const rnd = (a,b) => a + Math.random()*(b-a);
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const store = {
+  get(k,d){ try{ const v = localStorage.getItem('useless.'+k); return v===null?d:JSON.parse(v);}catch(e){return d;} },
+  set(k,v){ try{ localStorage.setItem('useless.'+k, JSON.stringify(v)); }catch(e){} }
+};
+
+/* ---------- toasts ---------- */
+const toasts = $('#toasts');
+function toast(msg, accent=null){
+  const el = document.createElement('div');
+  el.className = 'card toastin rounded-xl px-4 py-3 text-sm pointer-events-auto';
+  el.innerHTML = `<div class="flex gap-3"><span class="text-base">${accent||'∅'}</span><div>${msg}</div></div>`;
+  toasts.appendChild(el);
+  setTimeout(()=>{ el.style.transition='opacity .4s, transform .4s'; el.style.opacity=0; el.style.transform='translateX(30px)'; }, 4200);
+  setTimeout(()=>el.remove(), 4700);
+}
+
+/* ---------- counters ---------- */
+let clicks = store.get('clicks', 0);
+let wasted = 0, dodges = 0, presses = 0, pressedChallenge = false;
+const started = Date.now();
+function renderStats(){
+  $('#statClicks').textContent = clicks.toLocaleString();
+  const s = wasted;
+  $('#statTime').textContent = [Math.floor(s/3600), Math.floor(s%3600/60), s%60].map(n=>String(n).padStart(2,'0')).join(':');
+}
+renderStats();
+
+/* ---------- achievements ---------- */
+const ACH = [
+  {id:'first',   label:'First Click',        desc:'You clicked something. That is the whole achievement.'},
+  {id:'dodge',   label:'The Dodger',         desc:'Hovered the DO NOT PRESS button instead of pressing it. 5 times.'},
+  {id:'presser', label:'Certified Useless',  desc:'Pressed the DO NOT PRESS button 10 times. Legally useless now.'},
+  {id:'ninety',  label:'99% Dreamer',        desc:'Tried to speed up a progress bar that will never finish.'},
+  {id:'captcha', label:'I Selected Nothing', desc:'Passed a security check that verified absolute emptiness.'},
+  {id:'thinker', label:'Deep Thinker',       desc:'Asked UselessGPT 3 questions. Received 3 confirmations of nothing.'},
+  {id:'sub',     label:"Nobody's Subscriber",desc:'Subscribed to a newsletter that does not exist.'},
+  {id:'clicker', label:'Clicky Fingers',     desc:'Clicked the page 25 times for no reason at all.'},
+  {id:'idle',    label:'Still Here?',        desc:'Ignored this website for 30 seconds and stayed anyway.'}
+];
+let unlocked = store.get('ach', []);
+function unlock(id){
+  if(unlocked.includes(id)) return;
+  const a = ACH.find(x=>x.id===id); if(!a) return;
+  unlocked.push(id); store.set('ach', unlocked);
+  toast(`<b>Achievement unlocked</b><div class="text-white/55 text-xs mt-0.5">${a.label} — ${a.desc}</div>`, '🏆');
+  renderAch();
+}
+function renderAch(){
+  $('#achList').innerHTML = ACH.map(a=>{
+    const has = unlocked.includes(a.id);
+    return `<div class="flex gap-3 items-start rounded-xl p-3 border ${has?'border-[#c9ff3d]/40 bg-[#c9ff3d]/8':'border-white/10 bg-white/2 opacity-50'}">
+      <div class="w-8 h-8 rounded-lg grid place-items-center text-sm flex-none ${has?'bg-[#c9ff3d] text-[#0a0a0b]':'bg-white/10'}">${has?'🏆':'🔒'}</div>
+      <div><div class="text-sm font-bold">${a.label}</div><div class="text-xs text-white/50">${a.desc}</div></div>
+    </div>`;
+  }).join('');
+}
+renderAch();
+
+/* ---------- global clicks, floating "nothing" ---------- */
+document.addEventListener('click', e=>{
+  clicks++; store.set('clicks', clicks);
+  if(clicks > 4) unlock('clicker') || null;
+  if(clicks>=3) maybe();
+  renderStats();
+  const f = document.createElement('div');
+  f.className = 'fixed mono text-[11px] text-[#c9ff3d] pointer-events-none z-[80] floatup';
+  f.style.left = (e.clientX + rnd(-8,8)) + 'px'; f.style.top = (e.clientY - 10) + 'px';
+  f.textContent = pick(['+0','nothing','∅','0 use','useless','','nil','void']);
+  document.body.appendChild(f); setTimeout(()=>f.remove(), 1200);
+}, true);
+function maybe(){ if(Math.random()<0.12) unlock('first'); }
+
+/* trigger first achievement early */
+setTimeout(()=>{ if(clicks>0) unlock('first'); }, 3000);
+
+/* ---------- hero buttons ---------- */
+$('#ctaMain').addEventListener('click', e=>{
+  e.currentTarget.classList.add('shake');
+  setTimeout(()=>e.currentTarget.classList.remove('shake'), 520);
+  toast('<b>Error 0xN0TH1NG:</b> usefulness is not available in this version. Please try doing nothing instead.','⚠️');
+});
+$('#uselessHint').addEventListener('click', ()=> toast('It does nothing. That was the answer. You are welcome, or possibly not.','💡'));
+$$('[data-deadlink]').forEach(a=>a.addEventListener('click', e=>{ e.preventDefault(); toast('That page exists only in spirit. The spirit is also empty.','🚪'); }));
+$('#logoLink').addEventListener('click', e=>{ e.preventDefault(); toast('You clicked the logo. Nothing happened, but stylishly.','🕳️'); window.scrollTo({top:0,behavior:'smooth'}); });
+
+/* ---------- dark mode ---------- */
+let darkToggled = 0;
+$('#darkBtn').addEventListener('click', e=>{
+  darkToggled++;
+  const spin = 360 * darkToggled;
+  document.body.style.transition = 'filter .6s';
+  document.body.style.filter = 'hue-rotate(' + (spin % 720) + 'deg)';
+  toast(`Dark mode toggled. It is now ${darkToggled%2? 'extremely':'impossibly'} dark. Visual difference: 0%.`,'🌚');
+  $('#darkBtn').innerHTML = `Dark mode <span class="mono text-[#c9ff3d]">${darkToggled%2?'on':'off'}</span>`;
+});
+
+/* ---------- progress bar at 99% ---------- */
+const bar = $('#bar'), pctLabel = $('#pctLabel');
+let pct = 99, speeding = false;
+setInterval(()=>{
+  if(speeding) return;
+  pct = 99 + Math.min(0.9, (Math.random()*0.06));
+  bar.style.width = pct.toFixed(2)+'%';
+  pctLabel.textContent = pct.toFixed(1)+'%';
+}, 1600);
+$('#speedBtn').addEventListener('click', ()=>{
+  unlock('ninety');
+  speeding = true;
+  bar.style.transition='none'; bar.style.width='0%'; pctLabel.textContent='0.4%';
+  $('#speedMsg').textContent = pick(['recalculating…','asking the server nicely…','defragmenting nothing…','compiling usefulness (0 files)…']);
+  setTimeout(()=>{
+    bar.style.transition='width .9s linear'; bar.style.width = '98.9%'; pctLabel.textContent = '98.9%';
+    $('#speedMsg').textContent = 'status: we skipped ahead to the useless part. Still 99%. Forever 99%.';
+    toast('Rendering faster did not create value. It just got here sooner.','⏩');
+    setTimeout(()=>{ speeding = false; }, 1200);
+  }, 900);
+});
+
+/* ---------- the dodging button ---------- */
+const stage = $('#dodgeStage'), dodgeBtn = $('#dodgeBtn'), dodgeTip = $('#dodgeTip'), dodgeLog = $('#dodgeLog');
+const tips = ['tip: it doesn’t want to be pressed','tip: try keyboard navigation, coward','tip: pressing it changes nothing','tip: the button has been in therapy','tip: do not press. or do. we truly do not care.'];
+const pressLines = [
+  'You pressed it. Nothing happened. Increment updated anyway.',
+  'Congratulations — you have now pressed a button with no function. Twice.',
+  'Our engineers monitored this press. They said "yeah".',
+  'We have escalated your press to the Department of Nothing.',
+  'Nothing happened. Faster than usual, actually.',
+  'You are now 1 press closer to literally nothing.',
+  'The consequences have been generated. They were empty.',
+  'Somewhere, a metric rose. Then fell. Then shrugged.',
+  'This press will be remembered by no one, forever.',
+  'At this point you are the feature.'
+];
+let giveUp = false, attempts = 0;
+function moveBtn(){
+  const w = stage.clientWidth, h = stage.clientHeight;
+  const bw = dodgeBtn.offsetWidth, bh = dodgeBtn.offsetHeight;
+  const x = rnd(bw/2 + 8, w - bw/2 - 8), y = rnd(bh/2 + 40, h - bh/2 - 8);
+  dodgeBtn.style.left = (x/w*100)+'%'; dodgeBtn.style.top = (y/h*100)+'%';
+}
+dodgeBtn.addEventListener('mouseenter', ()=>{
+  if(giveUp) return;
+  attempts++; dodges++;
+  moveBtn();
+  dodgeLog.textContent = `dodges: ${dodges} · presses: ${presses} · consequences: 0`;
+  if(dodges>=5) unlock('dodge');
+  dodgeTip.textContent = pick(tips);
+  if(attempts === 4){ giveUp = true; dodgeBtn.textContent = 'FINE. PRESS ME.'; dodgeTip.textContent = 'the button has exhausted its escape budget'; }
+  if(attempts % 3 === 0) toast('The button is avoiding you. Nothing about this is productive.','🏃');
+});
+dodgeBtn.addEventListener('click', ()=>{
+  presses++;
+  dodgeLog.textContent = `dodges: ${dodges} · presses: ${presses} · consequences: 0`;
+  $('#pressResult').innerHTML = `<b class="text-[#c9ff3d]">press #${presses}:</b> ${pressLines[Math.min(presses-1, pressLines.length-1)]} <span class="text-white/35">(consequences remaining: 0)</span>`;
+  if(presses>=10) unlock('presser');
+  if(presses===1) toast('You did the one thing the button asked you not to do. It is fine with it.','🔴');
+  if(presses===7) toast('Seven presses. Your contact list is concerned about you.','📉');
+  if(!pressedChallenge && presses===3){ pressedChallenge = true; toast('Secret found: pressing three times reveals nothing extra. Enjoy.','🔑'); }
+  if(presses % 5 === 0){ dodgeBtn.classList.add('shake'); setTimeout(()=>dodgeBtn.classList.remove('shake'),520); moveBtn(); }
+});
+moveBtn();
+window.addEventListener('resize', moveBtn);
+
+/* ---------- search ---------- */
+const searchOut = $('#searchOut');
+$('#searchForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const q = $('#searchInput').value.trim() || 'everything';
+  const ql = q.toLowerCase();
+  let special = '';
+  if(/useful|help|win|money|answer/i.test(ql)) special = '<div class="text-[#c9ff3d]">Note: your query contained the word for usefulness. It has been politely ignored.</div>';
+  searchOut.innerHTML = `
+    <div class="mono text-xs text-white/40">Showing 0 of 1,000,000,000 results for “${q.replace(/[<>]/g,'')}” · (0.00 seconds)</div>
+    <div class="rounded-xl border border-white/10 p-4 bg-black/25">
+      <div class="text-sm font-bold text-white/70">No results found.</div>
+      <div class="text-xs text-white/45 mt-1">There is nothing here. There has never been anything here. Did you mean: “nothing”?</div>
+    </div>
+    ${special}`;
+  toast('Search complete. Results: none. Time saved: zero.','🔎');
+});
+
+/* ---------- settings switches ---------- */
+$$('.switch[data-set]').forEach(sw=>{
+  sw.addEventListener('click', ()=>{
+    if(sw.dataset.set === 'anim'){
+      sw.classList.toggle('on');
+      toast(sw.classList.contains('on') ? 'Animations reduced. You will not notice.' : 'Animations restored to maximum uselessness.','🎛️');
+      return;
+    }
+    sw.classList.toggle('on');
+    const msgs = {
+      useful:'Usefulness remains unavailable. Switch returned to off. Sorry.',
+      data:'We tried to save your data and discovered we have none. Setting reverted.',
+      noti:'Notification sent to no one. Delivered successfully.'
+    };
+    setTimeout(()=>{ sw.classList.remove('on'); }, 700);
+    toast(msgs[sw.dataset.set], '⚙️');
+  });
+});
+$('#resetBtn').addEventListener('click', ()=>{
+  store.set('clicks', 0); store.set('ach', []); unlocked = [];
+  clicks = 0; renderStats(); renderAch();
+  toast('Everything has been reset. Nothing was lost, because nothing existed.','♻️');
+});
+
+/* ---------- captcha ---------- */
+const labels = ['void','blank','empty','nil','null','','naught','hollow','——'];
+const grid = $('#captchaGrid');
+labels.forEach((l,i)=>{
+  const d = document.createElement('div');
+  d.className = 'square rounded-lg'; d.textContent = l; d.dataset.i = i;
+  d.addEventListener('click', ()=> d.classList.toggle('sel'));
+  grid.appendChild(d);
+});
+let captchaTries = 0;
+$('#captchaBtn').addEventListener('click', ()=>{
+  const sel = $$('.square.sel').length;
+  captchaTries++;
+  const out = $('#captchaOut');
+  if(captchaTries === 1){
+    out.innerHTML = `<span class="text-red-400">✕ Verification failed.</span> You selected ${sel} square(s). None contained anything, useful or otherwise. Please try again (again, nothing will change).`;
+  } else if(sel === 0){
+    out.innerHTML = `<span class="text-red-400">✕ Are you a robot?</span> Select at least one square containing nothing. Literally any square.`;
+  } else {
+    out.innerHTML = `<span class="text-[#c9ff3d]">✓ Verified.</span> You have proven you are a human doing nothing. Welcome. This solved nothing.`;
+    unlock('captcha');
+  }
+});
+
+/* ---------- A/B test ---------- */
+let abDone = false;
+$$('.abBtn').forEach(b=>b.addEventListener('click', ()=>{
+  const out = $('#abOut');
+  if(!abDone){
+    out.innerHTML = 'sampling… confidence: 0.0% <span class="blink">_</span>';
+    setTimeout(()=>{
+      out.innerHTML = `<span class="text-[#c9ff3d]">Test concluded.</span> Option ${b.dataset.ab} was selected. Both options perform identically, because both do nothing. Statistical significance: ironically high.`;
+      abDone = true;
+      toast('Experiment finished. We learned nothing. Publishing paper anyway.','🧪');
+    }, 1100);
+  } else {
+    out.textContent = 'The experiment has ended. It is now a memory of an experiment.';
+  }
+}));
+
+/* ---------- UselessGPT ---------- */
+let chatCount = 0;
+const replies = [
+  'Hmm.','I don’t know.','The answer is nothing. Next question.','Have you tried doing nothing about it?','Yes. No. Approximately nothing.','I asked myself too. I got distracted and forgot.',
+  'Great question. Wrong website.','Statistically, the answer is ∅.','I could explain, but then I would have explained something.','Let me search my knowledge base… it is empty. So am I.'
+];
+$('#chatForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const inp = $('#chatInput'); const q = inp.value.trim(); if(!q) return;
+  const log = $('#chatLog');
+  log.insertAdjacentHTML('beforeend', `<div class="flex gap-3 justify-end"><div class="text-white/85 bg-white/8 border border-white/10 rounded-xl px-3 py-2 max-w-[80%]">${q.replace(/[<>]/g,'')}</div></div>`);
+  inp.value = '';
+  const tid = document.createElement('div');
+  tid.className = 'flex gap-3'; tid.id = 'typing';
+  tid.innerHTML = `<div class="w-7 h-7 rounded-lg bg-[#c9ff3d] text-[#0a0a0b] grid place-items-center text-xs font-black flex-none">U</div><div class="text-white/50 mono text-xs pt-2">thinking about nothing<span class="blink">…</span></div>`;
+  log.appendChild(tid); log.scrollTop = log.scrollHeight;
+  setTimeout(()=>{
+    tid.remove(); chatCount++;
+    log.insertAdjacentHTML('beforeend', `<div class="flex gap-3"><div class="w-7 h-7 rounded-lg bg-[#c9ff3d] text-[#0a0a0b] grid place-items-center text-xs font-black flex-none">U</div><div class="text-white/80 max-w-[80%]">${replies[Math.min(chatCount-1, replies.length-1)]}</div></div>`);
+    log.scrollTop = log.scrollHeight;
+    if(chatCount>=3) unlock('thinker');
+  }, rnd(700,1300));
+});
+
+/* ---------- newsletter ---------- */
+$('#newsForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const v = $('#newsEmail').value.trim();
+  const out = $('#newsOut');
+  if(!v){ out.innerHTML = '<span class="text-red-400">Please enter an email. Or don’t. We won’t notice either way.</span>'; return; }
+  out.innerHTML = 'sending confirmation to a server that does not exist…';
+  setTimeout(()=>{
+    out.innerHTML = `<span class="text-[#c9ff3d]">✓ Confirmed.</span> A verification email was sent to <span class="mono">${v.replace(/[<>]/g,'')}</span>. It has already bounced. Please check your spam folder, then your regular folder, then give up.`;
+    unlock('sub');
+    toast('Subscription activated. First issue arrives on a date that does not exist.','✉️');
+  }, 1000);
+});
+
+/* ---------- FAQ ---------- */
+const faqs = [
+  ['What does this website do?','Nothing. Fully, reliably nothing. It is the only promise we have kept since 2016.'],
+  ['Is the content going to load?','It is at 99%. The remaining 1% contains every piece of value this site could ever have offered. We keep it there deliberately.'],
+  ['How is this website monetized?','It isn’t. Our investors have asked us to stop. We responded with a progress bar.'],
+  ['Can I press the big red button?','You may. It will not help. It may even help less than not pressing it, which is a known technique called "negative usefulness".'],
+  ['Is there an app?','No. There is barely a website.'],
+  ['Why did you build this?','To demonstrate what the internet looks like when effort is subtracted and replaced with confidence. It is trending. We are as worried as you are.'],
+  ['Do you have a newsletter?','We have a newsletter form. Different thing. The form also does nothing, but more dramatically.'],
+  ['Any advice?','Go outside. But first scroll back to the button and press it one more time. It will not fix anything.']
+];
+$('#faqWrap').innerHTML = faqs.map(([q,a])=>`
+  <details class="card rounded-2xl overflow-hidden">
+    <summary class="flex items-center justify-between gap-4 p-5 text-left">
+      <span class="font-bold">${q}</span>
+      <span class="chev text-[#c9ff3d] text-xl leading-none">+</span>
+    </summary>
+    <div class="px-5 pb-5 text-white/60 text-sm">${a}</div>
+  </details>`).join('');
+
+/* ---------- HUD uselessness meter ---------- */
+let uselessness = 0;
+const ring = $('#hudRing');
+setInterval(()=>{
+  uselessness = Math.min(99.9, uselessness + rnd(0.05,0.5) + clicks*0.004);
+  ring.setAttribute('stroke-dashoffset', (100 - uselessness).toFixed(2));
+  $('#hudText').textContent = uselessness.toFixed(1)+'%';
+  $('#footPct').textContent = uselessness.toFixed(1)+'%';
+}, 1200);
+
+/* ---------- wasted time ---------- */
+setInterval(()=>{ wasted++; renderStats();
+  if(Math.random()<0.08){
+    const world = $('#worldClicks');
+    const n = 8412993004 + clicks*37 + Math.floor(Math.random()*900);
+    world.textContent = 'clicks wasted worldwide: ' + n.toLocaleString();
+  }
+}, 1000);
+
+/* ---------- title cycling ---------- */
+const titles = ['useless website — the most useless website on the internet','still useless','yes, still nothing','99% loaded forever','you could be doing anything else','⚠️ this page does nothing'];
+let ti = 0;
+setInterval(()=>{ ti = (ti+1)%titles.length; document.title = titles[ti]; }, 7000);
+
+/* ---------- idle detection ---------- */
+let idleTimer = setTimeout(()=>{ unlock('idle'); toast('Are you still there? Doesn’t matter. The site continues either way.','⏳'); }, 30000);
+['mousemove','keydown','click','scroll'].forEach(ev=>window.addEventListener(ev, ()=>{ clearTimeout(idleTimer); idleTimer = setTimeout(()=>{ unlock('idle'); toast('You returned. Nothing changed, but we appreciate the commitment.','⏳'); }, 30000); }, {passive:true}));
+
+/* ---------- do-nothing mode ---------- */
+let dnInt = null, dnSec = 0;
+$('#nothingModeBtn').addEventListener('click', ()=>{
+  dnSec = 0; const ov = $('#dnOverlay'); ov.classList.remove('hidden'); ov.classList.add('flex');
+  $('#dnMsg').textContent = 'You are now officially doing nothing. This is the site’s core feature. Do not adjust your browser.';
+  dnInt = setInterval(()=>{
+    dnSec++;
+    $('#dnTimer').textContent = [Math.floor(dnSec/60), dnSec%60].map(n=>String(n).padStart(2,'0')).join(':');
+    if(dnSec === 10) $('#dnMsg').textContent = 'Ten seconds of pure nothing. You are surprisingly good at this.';
+    if(dnSec === 25) $('#dnMsg').textContent = 'This is the longest anyone has stayed. We are framing the timestamp.';
+    if(dnSec === 40) $('#dnMsg').textContent = 'Please consider a hobby. Anything. Even this website.';
+  }, 1000);
+});
+$('#dnExit').addEventListener('click', ()=>{
+  clearInterval(dnInt); const ov = $('#dnOverlay'); ov.classList.add('hidden'); ov.classList.remove('flex');
+  toast(`Do-nothing session complete. You achieved nothing in ${dnSec} seconds. Officially logged as productive.`,'🧘');
+});
+
+/* ---------- cookie banner ---------- */
+setTimeout(()=>{ $('#cookie').style.transform = 'none'; }, 1800);
+const hideCookie = ()=>{ $('#cookie').style.transform = 'translateY(150%)'; };
+$('#ckAccept').addEventListener('click', ()=>{ hideCookie(); toast('Cookies accepted. We have set 0 cookies. Your privacy is untouched and so is this website.','🍪'); });
+$('#ckReject').addEventListener('click', ()=>{ toast('Cookies rejected. The banner will return in 10 seconds out of spite.','🙃'); setTimeout(()=>{ $('#cookie').style.transform='none'; }, 10000); });
+$('#ckManage').addEventListener('click', ()=>{ const m=$('#prefsModal'); m.classList.remove('hidden'); m.classList.add('flex'); });
+$('#prefsClose').addEventListener('click', ()=>{ const m=$('#prefsModal'); m.classList.add('hidden'); m.classList.remove('flex'); });
+$('#prefsSave').addEventListener('click', ()=>{ $('#prefsModal').classList.add('hidden'); $('#prefsModal').classList.remove('flex'); hideCookie(); toast('Preferences saved. All cookies remain strictly useless. Nothing changed, as designed.','🔧'); });
+$$('[data-cookie]').forEach(sw=>sw.addEventListener('click', ()=>{
+  sw.classList.remove('on');
+  setTimeout(()=>sw.classList.add('on'), 600);
+  toast('This cookie category cannot be disabled, because it is not enabled either. It is a philosophical cookie.','🍪');
+}));
+
+/* ---------- achievements modal ---------- */
+$('#achievementsBtn').addEventListener('click', ()=>{ const m=$('#achModal'); m.classList.remove('hidden'); m.classList.add('flex'); });
+$('#achClose').addEventListener('click', ()=>{ const m=$('#achModal'); m.classList.add('hidden'); m.classList.remove('flex'); });
+$('#achClear').addEventListener('click', ()=>{ unlocked=[]; store.set('ach',[]); renderAch(); toast('Achievements cleared. You are back to having accomplished nothing measurable.','🧹'); });
+
+/* ---------- share ---------- */
+function share(){
+  const url = location.href;
+  if(navigator.share){ navigator.share({title:'useless website', text:'I found the most useless website on the internet. You should also waste this time.', url}).catch(()=>{}); return; }
+  (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject())
+    .then(()=> toast('Link copied. Share it with someone who has even less to do than you.','🔗'))
+    .catch(()=> toast('Could not copy the link. Typical. It is still in your address bar.','🔗'));
+}
+$('#shareTop').addEventListener('click', share);
+$('#shareBottom').addEventListener('click', share);
+
+/* ---------- konami easter egg ---------- */
+const code = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+let kIdx = 0;
+window.addEventListener('keydown', e=>{
+  const k = e.key.length===1 ? e.key.toLowerCase() : e.key;
+  kIdx = (k === code[kIdx]) ? kIdx+1 : (k === code[0] ? 1 : 0);
+  if(kIdx === code.length){
+    kIdx = 0; unlock('konami'); store.set('konami', true);
+    toast('<b>SECRET UNLOCKED:</b> Nothing. You have unlocked nothing. There is nothing behind this door either. Congratulations.','🎉');
+    for(let i=0;i<70;i++){
+      const c = document.createElement('div');
+      c.className='fixed top-0 w-2 h-2 rounded-full pointer-events-none z-[90] mono text-[10px] text-center';
+      c.style.left = Math.random()*100+'vw';
+      c.style.background = pick(['#c9ff3d','#ff5f5f','#5fd0ff','#c98bff','#ffd93d']);
+      document.body.appendChild(c);
+      const dur = rnd(1400,3200);
+      c.animate([{transform:'translateY(-20px) rotate(0)'},{transform:`translateY(105vh) rotate(${rnd(180,900)}deg)`}], {duration:dur, easing:'ease-in'});
+      setTimeout(()=>c.remove(), dur);
+    }
+  }
+});
+// konami is part of ACH list too
+ACH.push({id:'konami', label:'Useless Konami', desc:'Found the cheat code. It does nothing. Of course it does.'});
+if(store.get('konami',false) && !unlocked.includes('konami')) unlocked.push('konami');
+renderAch();
+
+/* ---------- mystery: click the logo 5 times ---------- */
+let logoClicks = 0;
+$('#logoLink').addEventListener('click', ()=>{
+  logoClicks++;
+  if(logoClicks === 5){
+    toast('You clicked the logo five times. Nothing happened, but the logo respects you now.','🔮');
+    unlock('dodge');
+  }
+  if(logoClicks === 10) toast('The logo has asked you to stop. Politely, but firmly.','🛑');
+});
+
+/* ---------- tab-away detector (nothing changes, we just say so) ---------- */
+let awayAt = 0;
+document.addEventListener('visibilitychange', ()=>{
+  if(document.hidden){ awayAt = Date.now(); }
+  else if(awayAt){
+    const secs = Math.round((Date.now()-awayAt)/1000);
+    toast(`You were away ${secs} second${secs===1?'':'s'}. Nothing happened while you were gone. Nothing happens while you are here either.`,'👋');
+    awayAt = 0;
+  }
+});
+
+/* ---------- first-visit welcome ---------- */
+const overlay = document.createElement('div');
+overlay.className = 'fixed inset-0 z-[95] bg-[#0a0a0b] grid place-items-center text-center px-6 transition-opacity duration-500';
+overlay.innerHTML = `<div>
+  <div class="w-14 h-14 mx-auto rounded-2xl border-2 border-[#c9ff3d]/30 border-t-[#c9ff3d] spin-slow"></div>
+  <div class="mono text-xs text-white/40 mt-6">loading absolutely nothing…</div>
+  <div class="w-56 h-1.5 bg-white/10 rounded-full mt-4 mx-auto overflow-hidden"><div id="preBar" class="h-full bg-[#c9ff3d] w-0 transition-all duration-1000"></div></div>
+</div>`;
+document.body.appendChild(overlay);
+requestAnimationFrame(()=>{ $('#preBar').style.width = '97%'; });
+setTimeout(()=>{
+  $('#preBar').style.width = '99%';
+  $('#preBar').classList.add('stripes');
+}, 700);
+setTimeout(()=>{ overlay.style.opacity = 0; setTimeout(()=>{ overlay.remove(); toast('Welcome to useless.website. Nothing has loaded. Nothing will.', '🎉'); }, 500); }, 2100);
+
+$('#year').textContent = new Date().getFullYear();
+if(!store.get('visits')) store.set('visits', 1); else store.set('visits', store.get('visits')+1);
+setTimeout(()=>{
+  const v = store.get('visits',1);
+  if(v>1) toast(`Welcome back. This is visit #${v}. Nothing has changed since visit #${v-1}.`,'🔁');
+}, 6000);
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"cfb6543e268d4ceb92c8170675caa481","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
